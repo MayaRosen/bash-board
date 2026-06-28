@@ -7,7 +7,7 @@ This repository explores chess through two complementary implementations:
 
 Together, they demonstrate two very different ways to model the same domain: text-processing and scripting on one side, client-side state management and rules validation on the other.
 
-## Project structure<img width="1920" height="1080" alt="Web Chess" src="https://github.com/user-attachments/assets/b866a3d9-713f-427d-b95e-7a35bdfa1176" />
+## Project structure
 
 
 ```text
