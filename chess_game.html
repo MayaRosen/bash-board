@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A local two-player chess game built with vanilla JavaScript.">
+  <title>Local Chess</title>
+  <link rel="stylesheet" href="assets/css/chess-game.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="app-header">
+      <h1>Local Chess</h1>
+      <p>Choose a piece, then select a highlighted destination. White moves first.</p>
+    </header>
+
+    <section class="game-layout" aria-label="Local chess game">
+      <div id="board" aria-label="Chess board"></div>
+
+      <aside class="control-panel" aria-label="Game controls">
+        <div id="status" aria-live="polite"></div>
+        <div id="gameInfo" class="game-info">Local two-player game</div>
+
+        <div class="control-group">
+          <button class="button button--secondary" id="start" type="button">First</button>
+          <button class="button button--secondary" id="back" type="button">Back</button>
+          <button class="button button--secondary" id="forward" type="button">Next</button>
+          <button class="button button--secondary" id="end" type="button">End</button>
+          <button class="button button--wide" id="playReplay" type="button">Play replay</button>
+          <button class="button" id="newGame" type="button">New game</button>
+          <button class="button" id="flip" type="button">Flip board</button>
+          <button class="button button--wide" id="loadReplay" type="button">Load Capablanca replay</button>
+        </div>
+
+        <div id="moves" aria-label="Move history"></div>
+      </aside>
+    </section>
+  </main>
+
+  <script src="assets/js/capablanca-game.js"></script>
+  <script src="assets/js/chess-game.js"></script>
+</body>
+</html>

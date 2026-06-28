@@ -28,10 +28,10 @@ move_index=0
 # Initialize the chessboard
 initialize_board() {
     board=(
-        [0]="  r n b q k b n r"
-        [1]="  p p p p p p p p"
-        [6]="  P P P P P P P P"
-        [7]="  R N B Q K B N R"
+        [0]="  ♜ ♞ ♝ ♛ ♚ ♝ ♞ ♜"
+        [1]="  ♟ ♟ ♟ ♟ ♟ ♟ ♟ ♟"
+        [6]="  ♙ ♙ ♙ ♙ ♙ ♙ ♙ ♙"
+        [7]="  ♖ ♘ ♗ ♕ ♔ ♗ ♘ ♖"
     )
     for i in {2..5}; do
         board[$i]="  • • • • • • • •"
@@ -43,12 +43,25 @@ initialize_board() {
 
 # Print board
 print_board() {
+    clear
     echo "Move ${move_index}/114"
-    echo "  a b c d e f g h"
-    for i in {0..7}; do
-        echo "$((8-i))${board[$i]} $((8-i))"
+    echo "     a  b  c  d  e  f  g  h"
+    for row in {0..7}; do
+        printf "  %d " "$((8 - row))"
+        for col in {0..7}; do
+            position=$((col * 2 + 2))
+            piece="${board[$row]:$position:1}"
+
+            if (( (row + col) % 2 == 0 )); then
+                background='\e[47m'
+            else
+                background='\e[44m'
+            fi
+            printf "%b %s \e[0m" "$background" "$piece"
+        done
+        printf " %d\n" "$((8 - row))"
     done
-    echo " a b c d e f g h"
+    echo "     a  b  c  d  e  f  g  h"
 }
 
 
@@ -141,7 +154,8 @@ run=0;
 # While loop of the chess game
 while [ $run -eq 0 ]; do
     echo "Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:"
-    read -r key
+    read -rsn1 key
+    echo
 
     case $key in
         d)
@@ -167,4 +181,3 @@ while [ $run -eq 0 ]; do
             echo "Invalid key pressed: $key"
     esac
 done
-

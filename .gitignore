@@ -1,0 +1,8 @@
+# Python environments and bytecode
+.venv/
+__pycache__/
+*.py[cod]
+
+# Runtime artifacts produced by the PGN replay scripts
+temp_moves.txt*
+uci_moves.txt*
