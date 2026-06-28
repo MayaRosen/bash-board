@@ -7,7 +7,8 @@ This repository explores chess through two complementary implementations:
 
 Together, they demonstrate two very different ways to model the same domain: text-processing and scripting on one side, client-side state management and rules validation on the other.
 
-## Project structure
+## Project structure<img width="1920" height="1080" alt="Web Chess" src="https://github.com/user-attachments/assets/b866a3d9-713f-427d-b95e-7a35bdfa1176" />
+
 
 ```text
 .
@@ -25,6 +26,8 @@ Together, they demonstrate two very different ways to model the same domain: tex
 ## 1. Unix / Linux PGN replay
 
 The original implementation is a Bash-driven replay tool for games from the 2024 Capablanca Memorial tournament. It reads Portable Game Notation (PGN), converts human-readable algebraic notation into machine-friendly UCI moves, then renders each position in a terminal board.
+
+<img width="754" height="218" alt="Bash Chess" src="https://github.com/user-attachments/assets/a188f808-71f1-4755-a6e0-009033fea34a" />
 
 ### Architecture
 
@@ -77,6 +80,8 @@ bash pgn_split.sh . splited
 ## 2. Graphical browser chess game
 
 [`chess_game.html`](chess_game.html) is a local browser game implemented directly in vanilla HTML, CSS, and JavaScript—no server, package manager, or framework is required. It uses professional SVG chess assets from Wikimedia Commons, so an internet connection is needed for the piece artwork to load.
+
+<img width="1920" height="1080" alt="Web Chess" src="https://github.com/user-attachments/assets/11d046e1-91f7-432c-afe2-7b0904984d8c" />
 
 ### Engine capabilities
 
